@@ -41,13 +41,11 @@ const watsonConversationWareOptions = {
 // declaring middleware
 const watsonConversationWare = WatsonConversationWare(watsonConversationWareOptions);
 botmaster.use(watsonConversationWare);
+botmaster.use(incomingMiddleware.tone.addToneInfoToUpdate);
 botmaster.use(incomingMiddleware.weather.addWeatherInfoToUpdate);
 botmaster.use(incomingMiddleware.stock.addStockInfoToUpdate);
 botmaster.use(incomingMiddleware.fundinfo.addMFInfoToUpdate);
 botmaster.use(incomingMiddleware.reply.replyToUser);
-
-
-
 
 
 // This will make our context persist throughout different messages from the

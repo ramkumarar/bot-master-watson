@@ -25,7 +25,7 @@ const addMFInfoToUpdate = {
 
     if (update.watsonUpdate.output.context  && update.watsonUpdate.output.context.action.name === 'lookupMF') {
         lookupMFPrice(update,next)        
-    }else if(update.watsonUpdate.intents && update.watsonUpdate.intents[0].intent === "get-mf-info"
+    }else if(update.watsonUpdate.intents.length >0 && update.watsonUpdate.intents[0].intent === "get-mf-info"
     ){
         update.watsonUpdate.output.text=["Cannot locate fund, Can you be more specific"]
         next();       
@@ -53,7 +53,7 @@ function lookupMFPrice(update, next) {
         let asOfDate=returnResponse[0]
         let nav=returnResponse[1]
         
-        let answer =`The nav for ${update.watsonUpdate.output.context.action.fundname}  as on ${asOfDate} was ${nav}₹`
+        let answer =`🗠 The nav for ${update.watsonUpdate.output.context.action.fundname}  as on ${asOfDate} was ${nav}₹`
 
          update.watsonUpdate.output.text=[answer]
         next();
@@ -66,8 +66,8 @@ function lookupMFPrice(update, next) {
 function mfCodelookup(name){
     let mfrepo={
         "ICICI Prudential Banking and PSU Debt Fund - Direct Plan" :'120257',
-        'ICICI Prudential Focused Equity Fund-Direct Growth':'120722',
-        'ICICI Prudential Focused Equity Fund-Direct Dividend':'120723',
+        'ICICI Prudential Focused Equity Fund Direct Growth':'120722',
+        'ICICI Prudential Focused Equity Fund Direct Dividend':'120723',
         'IDBI FOCUSED 30 EQUITY FUND-Growth Direct':'141920',
         'IDBI FOCUSED 30 EQUITY FUND-Growth Regular':'141919'        
     }

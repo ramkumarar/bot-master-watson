@@ -19,9 +19,11 @@ const reply = require('./reply');
 const weather = require('./weather');
 const stock = require('./stock');
 const fundinfo = require('./fundinfo');
+const tone = require('./tone');
 
 
 module.exports = {
+  tone,
   weather,
   stock,
   fundinfo,

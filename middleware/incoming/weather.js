@@ -48,7 +48,7 @@ function lookupWeather(update, next) {
 
         let answer=`The current temperature in ${body.name} is ${body.main.temp} °C. Today we had a min temperature of ${body.main.temp_min} and max temperature of ${body.main.temp_max}.`
         if(body.clouds.all && body.clouds.all > 70) {
-            answer =`${answer} We have a cloudy weather today`
+            answer =`${answer} We have a cloudy weather today ☁️`
         }
         
 

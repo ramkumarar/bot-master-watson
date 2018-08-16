@@ -22,4 +22,5 @@
   // Initialize all modules
   ConversationPanel.init();
   PayloadPanel.init();
+  Speech.init();
 })();

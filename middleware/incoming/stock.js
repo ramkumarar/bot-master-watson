@@ -50,7 +50,7 @@ function lookupStockPrice(update, next) {
         let min= latestPrice["3. low"]
         let max= latestPrice["2. high"]
         let volume= latestPrice["6. volume"]
-        let answer =`The stock ${symbol} opened the day at ${open} ₹ and the day price ranged between ${min} ₹ and ${max} ₹ with a volume of ${volume}`
+        let answer =`🗠 The stock ${symbol} opened the day at ${open} ₹ and the day price ranged between ${min} ₹ and ${max} ₹ with a volume of ${volume}`
 
 
          update.watsonUpdate.output.text=[answer]

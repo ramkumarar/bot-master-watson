@@ -24,7 +24,51 @@ const replyToUser = {
 };
 
 function submitMessage(bot, update) {      
-    return bot.sendTextCascadeTo(update.watsonUpdate.output.text, update.sender.id);        
+  let emojiWithText
+  if(update.watsonUpdate.output.tone) {
+      let emotion=update.watsonUpdate.output.tone           
+      
+      if(update.watsonUpdate.output.nodes_visited[0] ==="Anything else"){
+        emojiWithText=fetchEmojiWithText(emotion) 
+        update.watsonUpdate.output.text=emojiWithText
+      }else{
+        update.watsonUpdate.output.text = [`${update.watsonUpdate.output.text[0]} ${fetchEmoji(emotion)}`]
+      }
+      
+  }
+
+    
+   return bot.sendTextCascadeTo(update.watsonUpdate.output.text, update.sender.id);        
+    
+}
+
+function fetchEmojiWithText(emotion){
+  let emoji = fetchEmoji(emotion)
+  if(emotion === 'Joy'){
+    return [`Glad that you are ${emoji}`]
+  }else if(emotion === 'Anger'){
+    return [`Anger is not good for health ${emoji} `]
+  }else if(emotion === 'Sadness'){
+    return [`Can i be of any help ?${emoji} `]
+  }else if(emotion === 'Fear'){
+    return [`${emoji}`]
+  }else if(emotion === 'Disgust'){
+    return [`${emoji}`]
+  }
+}
+
+function fetchEmoji(emotion){
+  if(emotion === 'Joy'){
+    return '😊'
+  }else if(emotion === 'Anger'){
+    return  '👿'        
+  }else if(emotion === 'Sadness'){
+    return '😥'
+  }else if(emotion === 'Fear'){
+    return '😨'
+  }else if(emotion === 'Disgust'){
+    return '😞'
+  }
 }
 
 module.exports = {

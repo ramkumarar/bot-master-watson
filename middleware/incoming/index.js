@@ -20,6 +20,11 @@ const weather = require('./weather');
 const stock = require('./stock');
 const fundinfo = require('./fundinfo');
 const tone = require('./tone');
+const railfareinfo = require('./railfareinfo');
+const railseatinfo = require('./railseatinfo');
+const railpnrstatus = require('./railpnrstatus');
+const fxinfo = require('./fxinfo');
+const bankproducts = require('./bankproducts');
 
 
 module.exports = {
@@ -27,5 +32,10 @@ module.exports = {
   weather,
   stock,
   fundinfo,
+  railfareinfo,
+  railseatinfo,
+  railpnrstatus,
+  fxinfo,
+  bankproducts,
   reply
 };

@@ -37,6 +37,7 @@ function submitMessage(bot, update) {
       
   }
 
+
     
    return bot.sendTextCascadeTo(update.watsonUpdate.output.text, update.sender.id);        
     

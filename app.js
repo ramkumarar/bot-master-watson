@@ -45,7 +45,15 @@ botmaster.use(incomingMiddleware.tone.addToneInfoToUpdate);
 botmaster.use(incomingMiddleware.weather.addWeatherInfoToUpdate);
 botmaster.use(incomingMiddleware.stock.addStockInfoToUpdate);
 botmaster.use(incomingMiddleware.fundinfo.addMFInfoToUpdate);
+botmaster.use(incomingMiddleware.railfareinfo.addRailFareInfoToUpdate);
+botmaster.use(incomingMiddleware.railseatinfo.addSeatInfoToUpdate);
+botmaster.use(incomingMiddleware.railpnrstatus.addPnrInfoToUpdate);
+botmaster.use(incomingMiddleware.fxinfo.addfxInfoToUpdate);
+botmaster.use(incomingMiddleware.bankproducts.addbankproductInfoToUpdate);
+
+
 botmaster.use(incomingMiddleware.reply.replyToUser);
+
 
 
 // This will make our context persist throughout different messages from the

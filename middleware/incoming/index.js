@@ -25,6 +25,7 @@ const railseatinfo = require('./railseatinfo');
 const railpnrstatus = require('./railpnrstatus');
 const fxinfo = require('./fxinfo');
 const bankproducts = require('./bankproducts');
+const discovery = require('./discovery');
 
 
 module.exports = {
@@ -37,5 +38,6 @@ module.exports = {
   railpnrstatus,
   fxinfo,
   bankproducts,
+  discovery,
   reply
 };

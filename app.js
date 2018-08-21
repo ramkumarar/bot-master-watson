@@ -50,6 +50,7 @@ botmaster.use(incomingMiddleware.railseatinfo.addSeatInfoToUpdate);
 botmaster.use(incomingMiddleware.railpnrstatus.addPnrInfoToUpdate);
 botmaster.use(incomingMiddleware.fxinfo.addfxInfoToUpdate);
 botmaster.use(incomingMiddleware.bankproducts.addbankproductInfoToUpdate);
+botmaster.use(incomingMiddleware.discovery.addDiscoveryInfoToUpdate);
 
 
 botmaster.use(incomingMiddleware.reply.replyToUser);
